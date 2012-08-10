@@ -61,26 +61,28 @@ Luckily, there's a third party module that makes all of this trivial - it's call
      
 Once you have it, give it a try - it can really be a life-saver.  
 
-     var myArgs = require('optimist').argv,
-         help = 'This would be a great place for real help information.';
-     
-     if ((myArgs.h)||(myArgs.help)) {
-       console.log(help);
-       process.exit(0);
-     }
-     
-     switch (myArgs._[0]) {
-       case 'insult':
-         console.log(myArgs.n || myArgs.name, 'smells quite badly.');
-         break;
-       case 'compliment':
-         console.log(myArgs.n || myArgs.name, 'is really cool.');
-         break;
-       default:
-         console.log(help);
-     }
-     
-     console.log('myArgs: ', myArgs);
+```javascript
+var myArgs = require('optimist').argv,
+   help = 'This would be a great place for real help information.';
+
+if ((myArgs.h)||(myArgs.help)) {
+  console.log(help);
+  process.exit(0);
+}
+
+switch (myArgs._[0]) {
+  case 'insult':
+    console.log(myArgs.n || myArgs.name, 'smells quite badly.');
+    break;
+  case 'compliment':
+    console.log(myArgs.n || myArgs.name, 'is really cool.');
+    break;
+  default:
+    console.log(help);
+}
+
+console.log('myArgs: ', myArgs);
+```
      
 The last line was included to let you see how Optimist handles your arguments.  Here's a quick reference:
 
